@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 /*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald');
 html,
 body,
 p,
@@ -606,16 +605,6 @@ a:hover {
 .pl-5 {
   padding-left: 5px;
 }
-.oswald {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
-}
-body {
-  background-color: #f5f5f5;
-}
-/*------------------------HEADER-----------------------*/
-/*------------------------BODY-----------------------*/
-/*------------------------SIDEBAR-----------------------*/
-/*------------------------FOOTER-----------------------*/
 p {
   margin-top: 10px;
 }
@@ -648,7 +637,7 @@ p {
   border: 10px solid #3bb3db;
   border-radius: 20px;
   box-shadow: 8px 8px 12px 1px #ccc;
-  margin: 25vh auto;
+  margin: 5vh auto;
   position: relative;
 }
 .outter div.center {
@@ -698,5 +687,65 @@ p {
   font-weight: bold;
   color: #0cf;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.forum h1 {
+  font-size: 1em;
+  line-height: 5;
+  color: #666;
+}
+.forum h2 {
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+.forum h3 {
+  font-size: 1.4em;
+  line-height: 1.5;
+}
+.forum h4 {
+  font-size: 1.2em;
+  line-height: 3;
+}
+.posted {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 4px 4px 12px 1px #ccc;
+}
+.posted.grey {
+  background: #eee;
+}
+.posted div.msg p {
+  font-weight: bold;
+  font-size: 0.9em;
+  line-height: 1.2;
+}
+.posted div.msg p:nth-child(3) {
+  color: #ccc;
+  font-size: 1em;
+  font-style: italic;
+}
+.posted div.user {
+  text-align: center;
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}
+.posted div.user img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+.posted div.user p {
+  margin-top: 3px;
+}
+.posted div.user p:nth-child(2) {
+  color: #900;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.posted div.user p:nth-child(3) {
+  font-weight: bold;
+}
+.posted div.user p:nth-child(4) {
+  font-size: 0.9em;
 }
 /*# sourceMappingURL=css.bs3.en.css.map */

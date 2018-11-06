@@ -31,7 +31,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ac4e8', end
 	border: 10px solid #3bb3db;
 	border-radius: 20px;
 	box-shadow: 8px 8px 12px 1px #ccc;
-	margin: 25vh auto;
+	margin: 5vh auto;
 	position: relative;
 	div.center {
 		width: 300px;
@@ -65,6 +65,47 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ac4e8', end
 			.shadow;
 			.boxfonts;
 			.textshadow;
+		}
+	}
+}
+
+.forum {
+	h1 { font-size: 1em; line-height: 5; color: #666;	}
+	h2 { font-size: 1.8em; line-height: 1.5;	}
+	h3 { font-size: 1.4em; line-height: 1.5;	}
+	h4 { font-size: 1.2em; line-height: 3;	}
+}
+
+.posted {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
+	background: #fff;
+	box-shadow: 4px 4px 12px 1px #ccc;
+	&.grey {
+		background: #eee;
+	}
+	div.msg {
+		p {
+			font-weight: bold;
+			font-size: 0.9em;
+			line-height: 1.2;
+			&:nth-child(3) { color: #ccc; font-size: 1em; font-style: italic; }
+		}
+	}
+	div.user {
+		text-align: center;
+		border-left: 1px solid #ccc;
+		padding-left: 20px;
+		img {
+			max-width: 100px;
+			margin-bottom: 10px;
+		}
+		p {
+			margin-top: 3px;
+			&:nth-child(2) { color: #900; font-weight: bold; font-size: 1.1em; }
+			&:nth-child(3) { font-weight: bold; }
+			&:nth-child(4) { font-size: 0.9em; }
 		}
 	}
 }
