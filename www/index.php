@@ -252,6 +252,8 @@ var Data=[
 <h2><%- rc.listTitle %></h2>
 <h3><%- rc.listSubTitle %></h3>
 <h4><%- rc.listLegend %></h4>
+<div class="forPaginationT"></div>
+<div class="dataPosted">
 <% _.each( rc.listPosted, function(listPosted){ %>
 <div class="row mb-20 posted">
 	<div class="col-xs-10 msg">
@@ -275,25 +277,82 @@ var Data=[
 	</div>
 </div>
 <% }); %>
+</div>
+<div class="forPaginationB"></div>
 </script>
 
 <script>
+
+
+
+
+</script>
+
+<script>
+
+var perpage = 4
+var DataChunk = _.chunk(Data, perpage);
+var howManyPage = _.size(DataChunk);
+
+//make pagination
+var paginate = [];
+for (i = 0; i < howManyPage; i++) {
+	//paginate.push( '<li><a href="?page='+(i+1)+'">'+(i+1)+'</a></li>' )
+	paginate.push( '<li><a data-page='+i+' href="#" onClick="return false;">'+(i+1)+'</a></li>' )
+}
+
+//console.log(paginate);
+
+function renderPagination(_params) {
+	$( "<ul/>", {
+		"class": "pagination",
+		html: paginate.join( "" )
+	}).appendTo( ".forPaginationT" );
+
+	$('.forPaginationT').clone().appendTo( ".forPaginationB" )
+}
 
 //prepare template
 _.templateSettings.variable = "rc";
 
 var template = _.template( $( "script.template" ).html());
 
-var templateData = {
-		listTitle: "MAQE Forums",
-		listSubTitle: "Subtitle",
-		listLegend: "Posts",
-		listPosted: Data,
-		listItems: userData
-};
+//console.log(Data);
+	var templateData = {
+			listTitle: "MAQE Forums",
+			listSubTitle: "Subtitle",
+			listLegend: "Posts",
+	};
 
-//render it after h1
-$("h1").after(template(templateData));
+	//render it after h1
+	$("h1").after(template(templateData));
+
+	function createPage(_toPost) {
+
+		var PostData = {
+				listPosted: DataChunk[_toPost],
+				listItems: userData
+		};
+
+		//render it after h1
+		//$("h4").after(template(PostData));
+		//do it in
+		$(".dataPosted").append(template(PostData));
+
+	}
+
+
+renderPagination();
+createPage(0);
+
+$('.pagination a').click(function() {
+	var goto = $(this).attr("data-page")
+	//$('h4').nextAll().remove()
+	$('.dataPosted').html('')
+	console.log('goto='+goto);
+	createPage(goto);
+	//renderPagination();
+})
 
 //add zebra stripe
 $('.posted:odd').addClass('grey');
