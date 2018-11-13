@@ -610,6 +610,7 @@ p {
 }
 .boxfonts {
   font-size: 5em;
+  line-height: 2.5;
   font-weight: bold;
   color: #0cf;
 }
@@ -646,9 +647,10 @@ p {
   position: absolute;
   background-color: #fff;
   opacity: 0.3;
-  top: 20%;
-  left: 20%;
   z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .outter div.inner {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6ac4e8+1,d1ffeb+100 */
@@ -665,25 +667,27 @@ p {
   width: 100%;
   height: 100%;
   border: 8px solid #fff;
-  padding-left: 28px;
-  padding-top: 28px;
   border-radius: 20px;
+  position: absolute;
 }
 .outter div.inner div {
   position: relative;
   z-index: 1001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-110%, -110%);
   width: 38%;
   height: 38%;
   background: #fff;
   float: left;
   text-align: center;
-  margin: 20px;
-  padding: 81px 0;
+  margin: 2%;
   border-radius: 10px;
   -moz-box-shadow: inset 0 0 10px #666;
   -webkit-box-shadow: inset 0 0 10px #666;
   box-shadow: inset 0 0 10px #666;
   font-size: 5em;
+  line-height: 2.5;
   font-weight: bold;
   color: #0cf;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
